@@ -22,8 +22,6 @@ public class VectorTesting : MonoBehaviour
         float distance = direction.magnitude;
         transform.forward = direction;
 
-        Gizmos.DrawLine(target.position, transform.position);
-        
         if(distance <= 1.0f)
         {
             Gizmos.color = Color.green;
@@ -32,7 +30,10 @@ public class VectorTesting : MonoBehaviour
         {
             Gizmos.color = Color.red;
         }
-       
+
+
+        Gizmos.DrawLine(transform.position, transform.position + direction.normalized);
+
     }
 
 
